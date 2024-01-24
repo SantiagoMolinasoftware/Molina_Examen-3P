@@ -41,6 +41,43 @@ void mostrarProductos(struct producto *p, int n)
 
     for(i=0; i<n; i++)
     {
-        printf("Codigo: %s, Nombre: %s, Descripcion: %s, Cantidad: %d unidades, Precio de compra: %.2f por unidad\n", p[i].codigo, p[i].nombreProducto, p[i].descripcionProducto, p[i].cantidad, p[i].precioCompra);
+        printf("Codigo: %s, Nombre: %s, Descripcion: %s, Cantidad: %d unidades, Precio de compra: $%.2f por unidad\n", p[i].codigo, p[i].nombreProducto, p[i].descripcionProducto, p[i].cantidad, p[i].precioCompra);
     }
+}
+
+int main()
+{
+    int opcion, n=0;
+    struct producto p[50];
+
+    do
+    {
+        printf("\nMenu\n\n");
+        printf("1. Agregar producto\n");
+        printf("2. Mostrar productos\n");
+        printf("3. Salir\n");
+        printf("Ingrese una opcion: ");
+        scanf("%d", &opcion);
+
+        //Creacion del Menu
+
+        switch(opcion)
+        {
+            case 1:
+                agregarProducto(p, &n);
+                break;
+            case 2:
+                mostrarProductos(p, n);
+                break;
+            case 3:
+                printf("\n\nSaliendo del programa\n");
+                break;
+            default:
+                printf("\n\nOpcion no valida\n");
+                break;
+        }
+
+    }while(opcion != 3);
+
+    return 0;
 }
