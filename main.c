@@ -31,3 +31,16 @@ void agregarProducto(struct producto *p, int *n)
 
     (*n)++;
 }
+
+//Funcion para mostrar productos
+void mostrarProductos(struct producto *p, int n)
+{
+    int i;
+
+    printf("Lista de Productos\n\n");
+
+    for(i=0; i<n; i++)
+    {
+        printf("Codigo: %s, Nombre: %s, Descripcion: %s, Cantidad: %d unidades, Precio de compra: %.2f por unidad\n", p[i].codigo, p[i].nombreProducto, p[i].descripcionProducto, p[i].cantidad, p[i].precioCompra);
+    }
+}
